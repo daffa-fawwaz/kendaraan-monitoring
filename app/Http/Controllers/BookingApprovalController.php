@@ -23,7 +23,6 @@ class BookingApprovalController extends Controller
 
     public function approve(BookingApproval $approval)
     {
-        // Pastikan hanya bisa approve yang masih pending
         if ($approval->status !== 'pending') {
             return back()->with('error', 'Permintaan ini sudah diproses.');
         }
